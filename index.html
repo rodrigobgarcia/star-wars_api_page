@@ -3,11 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>One Piece Web Page</title>
+    <title>Pokemon Web Page</title>
 
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
+    <header class="header"></header>
+    <main class="main">
+        <div class="page">
+            <section class="pokemon__search">
+                <input type="text" class="main__poke-input" id="pokeName" placeholder="Enter a Pokemon name">
+                <button onclick="fetchData()" class="main__poke-btn">Fetch</button><br>
+            </section>
+            <section class="pokemon__result">
+                <div class="resul__images">
+                    <img src="" alt="Pokemon image" id="pokeImage" style="display: none;" class="result__image">
+                    <img src="" alt="Pokemon image" id="pokeImageShiny" style="display: none;" class="result__image">
+                    
+                </div>
+            </section>
+        </div>
+    </main>
+
     <script src="./javascript/index.js"></script>
 </body>
 </html>
