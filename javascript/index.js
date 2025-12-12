@@ -30,7 +30,7 @@ async function fetchData() {
 
 //Get list of Pokemons function
 async function fetchList() {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=50`);
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=52`);
 
     if(!response.ok){
             throw new Error("Could not fetch resource");
@@ -41,16 +41,44 @@ async function fetchList() {
 
     const pokemonList = data.results;
     for (let pokemon of pokemonList) {
-        console.log(pokemon.name);
-        const listItem = document.createElement('li');
+        const pokemonListItem = document.createElement('div');
+        const pokemonNameLinkContainer = document.createElement('div');
+        let pokemonImage = document.createElement('img')
+        const pokemonName = document.createElement('h3');
+        const pokemonLink = document.createElement('a')
+
+        async function fetchImage() {
+            const response = await fetch(`${pokemon.url}`);
+            const dataImage = await response.json();
+            console.log(dataImage);
+            const img = dataImage.results;
+            pokemonImage.src = dataImage.sprites.front_default;
+            console.log(pokemonImage);
+        }
+        fetchImage();
+        
+        
             
-            // B) Define o texto interno do <li> com o nome do Pokémon
-            // Usamos .name para o nome
-            listItem.textContent = pokemon.name; 
+        // B) Define o texto interno do <li> com o nome do Pokémon
+        // Usamos .name para o nome
+        
+        pokemonName.textContent = pokemon.name;
+        pokemonName.id = "list__item-name"
+        pokemonLink.textContent = pokemon.url;
+        pokemonLink.href = pokemon.url;
+        pokemonListItem.id = "list__item";
+        pokemonNameLinkContainer.id = "list__item-nameLink"
+        
+        pokemonNameLinkContainer.appendChild(pokemonName);
+        pokemonNameLinkContainer.appendChild(pokemonLink);
+        pokemonListItem.appendChild(pokemonNameLinkContainer);
+        pokemonListItem.appendChild(pokemonImage);
             
-            // C) Adiciona o novo <li> como filho do <ul>
-            ulElement = document.getElementById("pokemon_list-list")
-            ulElement.appendChild(listItem);
+            
+            
+        // C) Adiciona o novo <li> como filho do <ul>
+        ulElement = document.getElementById("pokemon_list-list")
+        ulElement.appendChild(pokemonListItem);
     }
 
 }

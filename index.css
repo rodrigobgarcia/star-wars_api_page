@@ -5,3 +5,39 @@
 .result__image {
     width: 150px;
 }
+
+#pokemon_list-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: rgb(5, 167, 59);
+    
+}
+
+#list__item {
+    display: flex;
+    flex-direction: row;
+    background-color: #ffffff;
+    font-size: 20px;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 110px;
+}
+
+#list__item-nameLink {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+#list__item-name {
+    margin: 0;
+}
+
+#list__item-name::first-letter {
+    text-transform: capitalize;
+    font-size: 30px;
+}
