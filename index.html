@@ -16,15 +16,21 @@
                 <button onclick="fetchData()" class="main__poke-btn">Fetch</button><br>
             </section>
             <section class="pokemon__result">
-                <div class="resul__images">
+                <div class="result__images">
                     <img src="" alt="Pokemon image" id="pokeImage" style="display: none;" class="result__image">
                     <img src="" alt="Pokemon image" id="pokeImageShiny" style="display: none;" class="result__image">
                 </div>
+                <div class="result__data">
+                    <div class="result__data-id"><h4 class="data__id" id="data__id">ID:</h4></div>
+                    <div class="result__data-name"><h4 class="data__name" id="data__name">Name:</h4></div>
+                    <div class="result__data-stats"><h4 class="data__stats" id="data__stats">Stats:</h4></div>
+                    <div class="result__data-abilities"><h4 class="data__abilities" id="data__abilities">Abilities:</h4></div>
+                </div>
             </section>
             <section class="pokemon_list">
-                <ul id="pokemon_list-list">
+                <div id="pokemon_list-list">
 
-                </ul>
+                </div>
             </section>
         </div>
     </main>
