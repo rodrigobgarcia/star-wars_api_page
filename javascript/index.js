@@ -17,11 +17,40 @@ async function fetchData() {
         const imgElement = document.getElementById("pokeImage");
         imgElement.src = pokeImage;
         imgElement.style.display = "block";
+
         //Shiny Image
         const pokeImageShiny = data.sprites.front_shiny;
         const imgElementShiny = document.getElementById("pokeImageShiny");
         imgElementShiny.src = pokeImageShiny;
         imgElementShiny.style.display = "block";
+
+        //Display ID
+        const pkmId = data.id;
+        let IdElement = document.getElementById("data__id");
+        IdElement.textContent = `ID: ${pkmId}`;
+
+        //Display Name
+        const pkmName = data.name;
+        let NameElement = document.getElementById("data__name");
+        NameElement.textContent = `Name: ${pkmName}`;
+
+        //Display Stats
+        const pkmStats = data.stats;
+        console.log(pkmStats);
+        let statsElement = document.getElementById("data__stats")
+        pkmStats.forEach(element => {
+            statsElement.textContent += `${element.stat.name}: ${element.base_stat} (effort: ${element.effort})`;
+        });
+
+        //Display Abilities
+        const pkmAbilities = data.abilities;
+        let abilitiesElement = document.getElementById("data__abilities")
+        pkmAbilities.forEach(element => {
+            abilitiesElement.textContent += `- ${element.ability.name}`;
+            console.log(pkmAbilities);
+        });
+
+        
     }
     catch(error) {
         console.error(error);
@@ -68,8 +97,6 @@ async function fetchList() {
         pokemonNameLinkContainer.appendChild(pokemonLink);
         pokemonListItem.appendChild(pokemonNameLinkContainer);
         pokemonListItem.appendChild(pokemonImage);
-            
-            
             
         //Add new elements in HTML
         ulElement = document.getElementById("pokemon_list-list")
