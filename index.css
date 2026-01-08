@@ -1,8 +1,9 @@
 .main__poke-input {
+    font-size: 1.5rem;
 }
 
-.pokemon__result {
-
+.main__poke-btn {
+    font-size: 1.4rem;
 }
 
 .result__images {
@@ -21,25 +22,38 @@
 }
 
 .result__data-id {
+    padding: 1rem;
     grid-row: 1/2;
     grid-column: 1/2;
     border: solid 2px rgb(2, 71, 25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
 }
 
 .result__data-name {
+    padding: 1rem;
     grid-row: 2/3;
     grid-column: 1/2;
     border: solid 2px rgb(2, 71, 25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
 }
 
 .result__data-stats {
+    padding: 1rem;
     grid-row: 1/3;
     border: solid 2px rgb(2, 71, 25);
+    font-size: 1.3rem;
 }
 
 .result__data-abilities {
     grid-row: 1/3;
     border: solid 2px rgb(2, 71, 25);
+    font-size: 1.3rem;
 }
 
 #pokemon_list-list {
